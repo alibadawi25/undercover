@@ -64,7 +64,6 @@ function App() {
           <Route path="/" element={<AppLayout />}>
             <Route index element={<Home />} />
             <Route path="games" element={<Games />} />
-            <Route path="undercover" element={<Undercover />} />
             <Route path="spy" element={<Spy />} />
             <Route path="mafia" element={<Mafia />} />
             <Route path="about" element={<About />} />

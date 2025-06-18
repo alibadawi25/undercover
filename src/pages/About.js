@@ -19,8 +19,8 @@ const About = () => {
         <Paragraph className="welcome-text">
           Undercover is your digital companion for real-life social deduction
           games. We don't replace the fun of in-person gaming – we enhance it by
-          providing the tools you need to play classic party games like Spy,
-          Mafia, and Undercover with your friends and family.
+          providing the tools you need to play classic party games like Spy and
+          Mafia with your friends and family.
         </Paragraph>
       </AnimatedCard>{" "}
       <AnimatedCard
@@ -116,7 +116,7 @@ const About = () => {
             },
             {
               title: "🎮 Multiple Games",
-              description: "Support for Spy, Mafia, Undercover, and more",
+              description: "Support for Spy, Mafia and more",
             },
             {
               title: "👑 Fair Play",

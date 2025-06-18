@@ -5,6 +5,7 @@
   
   **Your digital companion for real-life social deduction games**
   
+  [![Live Demo](https://img.shields.io/badge/Live%20Demo-Netlify-00ad9f.svg)](https://undercover-games-hub.netlify.app)
   [![React](https://img.shields.io/badge/React-18.x-blue.svg)](https://reactjs.org/)
   [![Ant Design](https://img.shields.io/badge/Ant%20Design-5.x-purple.svg)](https://ant.design/)
   [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)](https://www.javascript.com/)
@@ -237,7 +238,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Ready to host epic game nights?
 
-1. **Visit the app** at [your-deployed-url]
+1. **Visit the app** at [https://undercoverhub.netlify.app](https://undercoverhub.netlify.app)
 2. **Gather your friends** (4+ players recommended)
 3. **Choose a game** from our selection
 4. **Start playing** and have fun!

@@ -19,8 +19,8 @@ const Home = () => {
           Welcome to Undercover!
         </Title>
         <Typography.Paragraph className="welcome-text">
-          The perfect place to play classic social deduction games like Spy,
-          Mafia, and Undercover with friends!
+          The perfect place to play classic social deduction games like Spy and
+          Mafia with friends!
         </Typography.Paragraph>
       </AnimatedCard>
 
