@@ -4,7 +4,6 @@ import { ConfigProvider, theme, Layout, Typography } from "antd";
 import AppLayout from "./components/Layout";
 import Home from "./pages/Home";
 import Games from "./pages/Games";
-import Undercover from "./pages/Undercover";
 import Spy from "./pages/Spy";
 import Mafia from "./pages/Mafia";
 import About from "./pages/About";
