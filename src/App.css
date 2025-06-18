@@ -1,38 +1,520 @@
-.App {
-  text-align: center;
+/* Responsive base font size for better accessibility */
+html {
+  font-size: 16px; /* Fallback */
+  font-size: clamp(14px, 4vw, 18px); /* Responsive base */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Prevent zoom and ensure proper mobile behavior */
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
-.App-header {
-  background-color: #282c34;
+/* Dark theme styling for the UNDERCOVER app with Ant Design */
+.app-layout {
+  transition: all 0.3s ease;
+  background-color: #0a0a0a !important;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* Prevent horizontal overflow */
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+/* Dark theme card styling */
+.ant-card {
+  transition: all 0.3s ease;
+  background-color: #1a1a1a !important;
+  border-color: #434343 !important;
+  box-shadow: 0 4px 12px rgba(114, 46, 209, 0.15) !important;
+  width: clamp(320px, 90vw, 480px) !important;
+  margin: 0 auto !important;
+  margin-bottom: clamp(16px, 4vw, 32px) !important;
+  animation: fadeInUp 0.6s ease-out;
 }
 
-@keyframes App-logo-spin {
+.ant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(114, 46, 209, 0.25) !important;
+}
+
+/* Dark theme button styling */
+.ant-btn {
+  transition: all 0.3s ease;
+}
+
+.ant-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(114, 46, 209, 0.3);
+}
+
+/* Layout styling */
+.app-layout {
+  transition: all 0.3s ease;
+  background-color: #0a0a0a !important;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.ant-layout-content {
+  background: #0a0a0a !important;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ant-card {
+  animation: fadeInUp 0.6s ease-out;
+  margin: 0 auto;
+}
+
+/* Custom scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #434343;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #722ed1;
+}
+
+/* Header styling */
+.undercover-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #434343;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  color: #722ed1;
+}
+
+.header-icon {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  color: #722ed1;
+}
+
+/* Content area styling */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  padding: 24px;
+  /* Prevent horizontal overflow */
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.welcome-card {
+  width: clamp(320px, 90vw, 480px); /* Smooth responsive width */
+  max-width: 100%;
+  text-align: center;
+  margin: 0 auto; /* Center horizontally only */
+  margin-bottom: clamp(16px, 4vw, 32px); /* Consistent bottom spacing */
+  background-color: #1a1a1a !important;
+  border-color: #434343 !important;
+  box-shadow: 0 4px 12px rgba(114, 46, 209, 0.15) !important;
+  padding: clamp(16px, 4vw, 24px); /* Responsive padding */
+}
+
+.welcome-title {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.welcome-text {
+  color: #a6a6a6 !important;
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+.primary-button {
+  font-weight: 600;
+  background-color: #722ed1 !important;
+  border-color: #722ed1 !important;
+  color: #ffffff !important;
+}
+
+.secondary-button {
+  font-weight: 600;
+  background-color: transparent !important;
+  border-color: #722ed1 !important;
+  color: #722ed1 !important;
+}
+
+/* Responsive breakpoints for better card sizing */
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+  .welcome-card,
+  .ant-card {
+    width: clamp(320px, 85vw, 500px) !important;
+    padding: clamp(20px, 3vw, 28px) !important;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .welcome-title {
+    font-size: 1.5rem;
+  }
+  .welcome-text {
+    font-size: 1rem;
+  }
+  .primary-button {
+    font-size: 1rem;
+  }
+  .secondary-button {
+    font-size: 1rem;
+  }
+  .main-content {
+    padding: clamp(12px, 3vw, 16px);
+  }
+
+  .welcome-card,
+  .ant-card {
+    width: clamp(280px, 90vw, 450px) !important;
+    padding: clamp(16px, 4vw, 24px) !important;
+    margin: 0 auto !important;
+    margin-bottom: clamp(12px, 3vw, 24px) !important;
+  }
+
+  .header-title {
+    font-size: 1.25rem;
+  }
+
+  .header-icon {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .welcome-card,
+  .ant-card {
+    width: 95vw !important;
+    padding: clamp(12px, 4vw, 18px) !important;
+    margin: 0 auto !important;
+    margin-bottom: clamp(8px, 2vw, 16px) !important;
+    border-radius: 8px !important;
+  }
+
+  .welcome-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .welcome-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .main-content {
+    padding: clamp(6px, 2vw, 10px);
+  }
+
+  .header-title {
+    font-size: 1.125rem;
+  }
+
+  .header-icon {
+    font-size: 1.125rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    min-height: 44px; /* Better touch target */
+    font-size: 0.95rem;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 360px) {
+  html {
+    font-size: clamp(12px, 3.5vw, 16px);
+  }
+
+  .welcome-card,
+  .ant-card {
+    width: 92vw !important;
+    padding: clamp(8px, 3vw, 12px) !important;
+    margin: 0 auto !important;
+    margin-bottom: clamp(4px, 1vw, 8px) !important;
+    border-radius: 6px !important;
+  }
+
+  .welcome-title {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .welcome-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .main-content {
+    padding: clamp(4px, 1.5vw, 8px);
+  }
+
+  .header-title {
+    font-size: 1rem;
+  }
+
+  .header-icon {
+    font-size: 1rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    min-height: 48px; /* Larger touch target for small screens */
+    font-size: 0.9rem;
+    padding: 12px 16px;
+  }
+
+  .undercover-header {
+    padding: 0 12px !important;
+  }
+}
+
+/* Very small devices (older phones, narrow viewports) */
+@media (max-width: 320px) {
+  html {
+    font-size: clamp(11px, 3vw, 14px);
+  }
+
+  .welcome-card,
+  .ant-card {
+    width: 90vw !important;
+    padding: clamp(6px, 2.5vw, 10px) !important;
+    margin: 0 auto !important;
+    margin-bottom: clamp(2px, 0.6vw, 4px) !important;
+    border-radius: 4px !important;
+  }
+
+  .welcome-title {
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .welcome-text {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .main-content {
+    padding: clamp(2px, 1vw, 6px);
+  }
+
+  .header-title {
+    font-size: 0.95rem;
+  }
+
+  .header-icon {
+    font-size: 0.95rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    min-height: 44px;
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+
+  .undercover-header {
+    padding: 0 8px !important;
+  }
+
+  .header-content {
+    gap: 8px !important;
+  }
+}
+
+/* Scroll-triggered animations */
+.ant-card.card-hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.ant-card.card-visible {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+  z-index: 1;
+}
+
+/* Staggered animation delays for multiple cards */
+.ant-card.card-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.ant-card.card-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.ant-card.card-delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* Alternative animation styles */
+.ant-card.slide-in-left {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.8s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.ant-card.slide-in-left.card-visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.ant-card.slide-in-left.card-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.ant-card.slide-in-left.card-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.ant-card.slide-in-left.card-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.ant-card.slide-in-right {
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.8s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.ant-card.slide-in-right.card-visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.ant-card.slide-in-right.card-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.ant-card.slide-in-right.card-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.ant-card.slide-in-right.card-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.ant-card.fade-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.6s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.ant-card.fade-scale.card-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ant-card.fade-scale.card-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.ant-card.fade-scale.card-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.ant-card.fade-scale.card-delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* Responsive animation adjustments */
+@media (max-width: 480px) {
+  .ant-card.slide-in-left {
+    transform: translateX(-30px);
+  }
+
+  .ant-card.slide-in-right {
+    transform: translateX(30px);
+  }
+
+  .ant-card.card-hidden {
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 320px) {
+  .ant-card.slide-in-left {
+    transform: translateX(-20px);
+  }
+
+  .ant-card.slide-in-right {
+    transform: translateX(20px);
+  }
+
+  .ant-card.card-hidden {
+    transform: translateY(15px);
   }
 }
