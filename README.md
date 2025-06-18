@@ -1,7 +1,7 @@
 # 🕵️ Undercover - Social Deduction Games Hub
 
 <div align="center">
-  <img src="public/undercover.png" alt="Undercover Logo" width="120" height="120">
+  <img src="public/Undercover.png" alt="Undercover Logo" width="120" height="120">
   
   **Your digital companion for real-life social deduction games**
   
@@ -31,7 +31,7 @@
 
 ## 🎮 What is Undercover?
 
-Undercover is a modern web application that enhances real-life social deduction games like **Spy**, **Mafia**, and **Undercover**. We don't replace the fun of in-person gaming – we enhance it by providing digital tools that make setup quick, fair, and seamless.
+Undercover is a modern web application that enhances real-life social deduction games like **Spy**and **Mafia**. We don't replace the fun of in-person gaming – we enhance it by providing digital tools that make setup quick, fair, and seamless.
 
 ### 🎯 Perfect For:
 
@@ -115,10 +115,6 @@ Undercover is a modern web application that enhances real-life social deduction 
 
 Classic social deduction where one player is the spy trying to guess the location while others discuss without revealing it.
 
-### 🤐 **Undercover**
-
-Players receive related but different words, with undercover agents trying to blend in while civilians find the imposters.
-
 ### 🌙 **Mafia**
 
 The timeless game of deduction where mafia members eliminate townspeople while townspeople try to identify the mafia.
@@ -179,7 +175,6 @@ undercover/
 │   │   ├── Home.js
 │   │   ├── About.js
 │   │   ├── Games.js
-│   │   ├── Undercover.js
 │   │   ├── Spy.js
 │   │   └── Mafia.js
 │   ├── App.js
